@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Horizon — Official Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000000;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        .dark-card {
+            background: rgba(14, 14, 18, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+        .dark-card:hover {
+            border-color: rgba(6, 182, 212, 0.25);
+        }
+        .gemini-gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 182, 212, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="w-full max-w-4xl mx-auto px-6 py-4 flex items-center justify-between border-b border-white/10">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-cyan-400 p-[1px] flex items-center justify-center overflow-hidden shrink-0">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=300&auto=format&fit=crop" 
+                     alt="Avatar" class="w-full h-full rounded-full object-cover">
+            </div>
+            <span class="font-semibold text-sm tracking-tight text-white">Dash Horizon</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-medium">Official Hub</span>
+        </div>
+
+        <nav class="hidden sm:flex items-center gap-5 text-xs font-medium text-slate-400">
+            <a href="#verify-rules" class="hover:text-cyan-400 transition">Verify Level</a>
+            <a href="#horizon-list" class="hover:text-cyan-400 transition">Horizon List</a>
+            <a href="#changelog" class="hover:text-cyan-400 transition">Update Log</a>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="w-full max-w-2xl mx-auto px-6 py-8 flex flex-col gap-8">
+        
+        <!-- Hero Title -->
+        <section class="text-center flex flex-col items-center gap-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                Giai Đoạn Khởi Tạo • UPD 0
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+                Cổng Thông Tin & Xác Thực <br>
+                <span class="gemini-gradient-text">Dash Horizon</span>
+            </h1>
+            <p class="text-xs text-slate-400 max-w-md">
+                Nơi quản lý hệ thống xác thực Level, tra cứu Horizon List, và cập nhật thông tin dự án.
+            </p>
+        </section>
+
+        <!-- Banner Update -->
+        <section class="dark-card p-2 rounded-2xl shadow-xl">
+            <div class="relative w-full h-56 sm:h-72 rounded-xl overflow-hidden bg-zinc-950 border border-white/10 flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" 
+                     alt="Update Preview" class="w-full h-full object-cover">
+                <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-white/10 text-xs font-medium text-cyan-300">
+                    🚀 UPD 0: First Look & Gameplay Foundation
+                </div>
+            </div>
+        </section>
+
+        <!-- Verify Rules & Form -->
+        <section id="verify-rules" class="dark-card p-5 rounded-2xl flex flex-col gap-4 border border-purple-500/20">
+            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                <h2 class="text-xs font-semibold text-purple-400 flex items-center gap-1.5">
+                    <span>🛡️</span> Quy Định Gửi Level & Verify
+                </h2>
+                <span class="text-[10px] text-slate-500 font-mono">Rate System</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="p-3 rounded-xl bg-black border border-cyan-500/20 flex flex-col gap-1">
+                    <span class="font-bold text-cyan-300">Cách 1: YouTuber</span>
+                    <p class="text-[11px] text-slate-400">Quay video Verify + Showcase, nhập tên kênh để nhận thông báo qua Email duyệt thẳng.</p>
+                </div>
+                <div class="p-3 rounded-xl bg-black border border-pink-500/20 flex flex-col gap-1">
+                    <span class="font-bold text-pink-400">Cách 2: Player Thường</span>
+                    <p class="text-[11px] text-slate-400">Bắt buộc quay video kèm Tên Level + ID rõ ràng để được kiểm duyệt.</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleLevelVerify(event)" class="flex flex-col gap-2 pt-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <input type="text" id="levelName" placeholder="Tên Level..." required 
+                        class="px-3 py-2 bg-black border border-slate-800 rounded-lg text-xs text-cyan-300 focus:outline-none focus:border-cyan-400">
+                    <input type="text" id="levelId" placeholder="Mã ID Level / YouTube Channel..." required 
+                        class="px-3 py-2 bg-black border border-slate-800 rounded-lg text-xs text-cyan-300 focus:outline-none focus:border-cyan-400">
+                </div>
+                <button type="submit" class="py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 text-xs font-semibold text-white hover:opacity-90 transition">
+                    GỬI YÊU CẦU VERIFY & RATE
+                </button>
+            </form>
+            <div id="verifyAlert" class="hidden text-xs p-3 rounded-xl border"></div>
+        </section>
+
+        <!-- Horizon List -->
+        <section id="horizon-list" class="dark-card p-5 rounded-2xl flex flex-col gap-3 border border-cyan-500/20">
+            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                <h2 class="text-xs font-semibold text-cyan-400 flex items-center gap-1.5">
+                    <span>🏆</span> Horizon List (Top 150)
+                </h2>
+                <span class="text-[10px] text-slate-500 font-mono">Leaderboard</span>
+            </div>
+
+            <div id="horizonListContainer" class="custom-scroll max-h-72 overflow-y-auto flex flex-col gap-1.5 pr-1">
+                <!-- Rendered by script -->
+            </div>
+        </section>
+
+        <!-- Update Log -->
+        <section id="changelog" class="dark-card p-5 rounded-2xl flex flex-col gap-3">
+            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                <h2 class="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                    <span>📜</span> Update Log
+                </h2>
+                <span class="text-[10px] text-slate-500 font-mono">UPD 0</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-black border border-white/10 flex flex-col gap-1.5 text-xs">
+                <div class="flex items-center justify-between">
+                    <span class="font-bold text-cyan-300">UPD 0 — Khởi Động Dự Án</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Mới</span>
+                </div>
+                <ul class="list-disc list-inside text-slate-400 leading-relaxed pl-1">
+                    <li>Khởi tạo hệ thống khung móng tựa game Dash Horizon.</li>
+                    <li>Thiết lập cổng kết nối thông tin tại dashhorizonreal.github.io.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-4xl mx-auto px-6 py-5 border-t border-white/10 text-center text-[11px] text-slate-500">
+        © 2026 Dash Horizon Hub. Hosted on dashhorizonreal.github.io
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function handleLevelVerify(e) {
+            e.preventDefault();
+            const levelName = document.getElementById('levelName').value.trim();
+            const levelId = document.getElementById('levelId').value.trim();
+            const alertBox = document.getElementById('verifyAlert');
+            
+            alertBox.classList.remove('hidden', 'bg-emerald-950/40', 'border-emerald-500/30', 'text-emerald-300');
+            alertBox.classList.add('bg-emerald-950/40', 'border-emerald-500/30', 'text-emerald-300');
+            alertBox.innerHTML = `✔ <b>Đã gửi thành công!</b> Level <b>${levelName}</b> (ID: ${levelId}) đã được ghi nhận chờ Dev xét duyệt.`;
+        }
+
+        // Horizon List 150 items
+        (function renderHorizonList() {
+            const horizonList = [
+                { top: 1, player: "---", creator: "---" },
+                { top: 2, player: "---", creator: "---" },
+                { top: 3, player: "---", creator: "---" }
+            ];
+
+            const container = document.getElementById('horizonListContainer');
+            if (!container) return;
+            
+            let htmlContent = '';
+            for (let i = 1; i <= 150; i++) {
+                const data = horizonList.find(item => item.top === i) || { player: "Chưa có tên", creator: "Trống" };
+                const isFilled = data.player !== "Chưa có tên" && data.player !== "---";
+                
+                htmlContent += `
+                    <div class="flex items-center justify-between p-2 rounded-lg bg-black border ${isFilled ? 'border-cyan-500/40 text-cyan-300' : 'border-white/5 text-slate-500'} text-xs">
+                        <span class="font-bold w-14 text-slate-400">Top ${i}</span>
+                        <span class="flex-1 font-semibold ${isFilled ? 'text-white' : 'text-slate-600'}">${data.player}</span>
+                        <span class="text-[11px] text-slate-500">by <span class="${isFilled ? 'text-cyan-400 font-medium' : 'text-slate-600'}">${data.creator}</span></span>
+                    </div>
+                `;
+            }
+            container.innerHTML = htmlContent;
+        })();
+    </script>
+</body>
+</html>
