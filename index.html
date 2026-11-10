@@ -11,28 +11,29 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+            /* Lấy ảnh elaina.jpg làm hình nền toàn màn hình phía ngoài */
             background: url('elaina.jpg') no-repeat center center fixed;
             background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
-        /* Lớp phủ mờ nền để làm nổi bật khung nội dung */
+        /* Lớp phủ mờ nhẹ toàn màn hình để nổi bật khung chính giữa */
         .overlay {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: -1;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(3px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .main-container {
-            background: rgba(14, 14, 18, 0.88);
+        .center-box {
+            background: rgba(14, 14, 18, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(12px);
         }
         .gemini-gradient-text {
             background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #22d3ee 100%);
@@ -43,43 +44,38 @@
 </head>
 <body>
 
-    <div class="overlay"></div>
-
-    <!-- Khung nội dung chính ở giữa màn hình -->
-    <div class="main-container p-6 sm:p-8 rounded-3xl shadow-2xl max-w-xl w-full mx-4 text-center flex flex-col gap-5 my-8">
-        
-        <!-- Tiêu đề badge nhỏ -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium mx-auto">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            Dash Horizon • Hub Trực Tuyến
-        </div>
-        
-        <!-- Tiêu đề chính và mô tả -->
-        <div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold gemini-gradient-text tracking-wide mb-2">Dash Horizon</h1>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed px-2">
+    <div class="overlay">
+        <!-- Khung nội dung đặt đúng ở khoảng trống giữa màn hình -->
+        <div class="center-box p-6 rounded-2xl shadow-2xl max-w-lg w-full mx-4 text-center flex flex-col gap-4 max-h-[90vh] overflow-y-auto">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium mx-auto">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                Dash Horizon • Hub Trực Tuyến
+            </div>
+            
+            <h1 class="text-2xl font-extrabold gemini-gradient-text">Dash Horizon</h1>
+            
+            <p class="text-xs text-slate-300 leading-relaxed">
                 Nơi quản lý hệ thống xác thực Level, tra cứu Horizon List, và cập nhật thông tin dự án.
             </p>
-        </div>
 
-        <!-- Khung chứa ảnh minh họa (Đã nhặt đúng file elaina.jpg.jpeg của tiểu thư) -->
-        <div class="w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg relative group">
-            <img src="elaina.jpg.jpeg" alt="Dash Horizon Artwork" class="w-full h-auto object-cover max-h-[300px] group-hover:scale-105 transition duration-500">
-            <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-xs text-cyan-300 flex items-center gap-2 shadow">
-                <span>🚀</span> UPD 0: First Look & Gameplay Foundation
+            <!-- Khung ảnh minh họa chính giữa (chứa ảnh elaina.jpg.jpeg) -->
+            <div class="w-full overflow-hidden rounded-xl border border-white/10 shadow-lg relative group">
+                <img src="elaina.jpg.jpeg" alt="Dash Horizon Artwork" class="w-full h-auto object-cover max-h-[220px]">
+                <div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 text-[10px] text-cyan-300 flex items-center gap-1.5">
+                    <span>🚀</span> UPD 0: First Look & Gameplay Foundation
+                </div>
+            </div>
+
+            <div class="flex gap-3 justify-center pt-1">
+                <button onclick="alert('Vào game ngay!')" class="px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/20 hover:opacity-90 transition cursor-pointer">
+                    Vào Game Ngay
+                </button>
+                <button onclick="alert('Bảng xếp hạng đang phát triển!')" class="px-5 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-semibold text-xs hover:bg-white/10 transition cursor-pointer">
+                    Bảng Xếp Hạng
+                </button>
             </div>
         </div>
-
-        <!-- Các nút bấm tương tác -->
-        <div class="flex flex-wrap gap-3 justify-center pt-1">
-            <button onclick="alert('Đang chuyển hướng vào game Dash Horizon!')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/25 hover:opacity-95 transition cursor-pointer">
-                Vào Game Ngay
-            </button>
-            <button onclick="alert('Bảng xếp hạng đang được cập nhật!')" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-semibold text-xs hover:bg-white/10 transition cursor-pointer">
-                Bảng Xếp Hạng
-            </button>
-        </div>
-
     </div>
 
 </body>
