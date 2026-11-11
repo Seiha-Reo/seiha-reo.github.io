@@ -11,28 +11,25 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            overflow: hidden;
-            /* Đường dẫn ảnh nền full màn hình */
             background: url('elaina.jpg') no-repeat center center fixed;
             background-size: cover;
+            color: #fff;
+            scroll-behavior: smooth; /* Tạo hiệu ứng trượt mượt mà */
         }
         .overlay {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(3px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: -1;
         }
-        .center-box {
-            background: rgba(14, 14, 18, 0.9);
+        .main-container {
+            background: rgba(14, 14, 18, 0.88);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
         }
         .gemini-gradient-text {
             background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #22d3ee 100%);
@@ -41,40 +38,99 @@
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen py-10 px-4 flex flex-col items-center">
 
-    <div class="overlay">
-        <div class="center-box p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-4 text-center flex flex-col gap-5">
-            
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium mx-auto">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                Dash Horizon • Hub Trực Tuyến
-            </div>
-            
-            <h1 class="text-4xl font-extrabold gemini-gradient-text tracking-wide">Dash Horizon</h1>
-            
-            <p class="text-xs text-slate-300 leading-relaxed px-2">
+    <div class="overlay"></div>
+
+    <!-- KHUNG CHÍNH (Giao diện chính giữa màn hình) -->
+    <div class="main-container p-6 sm:p-8 rounded-3xl shadow-2xl max-w-xl w-full text-center flex flex-col gap-5 my-auto">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium mx-auto">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            Dash Horizon • Hub Trực Tuyến
+        </div>
+        
+        <div>
+            <h1 class="text-4xl font-extrabold gemini-gradient-text tracking-wide mb-2">Dash Horizon</h1>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed px-2">
                 Nơi quản lý hệ thống xác thực Level, tra cứu Horizon List, và cập nhật thông tin dự án.
             </p>
+        </div>
 
-            <!-- Khung ảnh chính giữa chứa ảnh elaina.jpg.jpeg -->
-            <div class="w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg relative group">
-                <img src="elaina.jpg.jpeg" alt="Dash Horizon Artwork" class="w-full h-auto object-cover max-h-[260px]">
-                <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-xs text-cyan-300 flex items-center gap-2">
-                    <span>🚀</span> UPD 0: First Look & Gameplay Foundation
+        <!-- Khung ảnh minh họa elaina.jpg.jpeg -->
+        <div class="w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg relative group">
+            <img src="elaina.jpg.jpeg" alt="Dash Horizon Artwork" class="w-full h-auto object-cover max-h-[260px]">
+            <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-xs text-cyan-300 flex items-center gap-2">
+                <span>🚀</span> UPD 0: First Look & Gameplay Foundation
+            </div>
+        </div>
+
+        <!-- Các nút bấm điều hướng -->
+        <div class="flex gap-4 justify-center items-center pt-1">
+            <button onclick="alert('Đang vào game Dash Horizon!')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/25 hover:opacity-90 transition cursor-pointer">
+                Vào Game Ngay
+            </button>
+            <!-- Bấm vào đây sẽ trượt mượt xuống phần Horizon List bên dưới -->
+            <a href="#horizon-list" class="px-6 py-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-semibold text-xs hover:bg-white/10 transition text-center inline-block">
+                Horizon List
+            </a>
+        </div>
+
+    </div>
+
+    <!-- KHUNG BẢNG XẾP HẠNG (HORIZON LIST - TOP LEVEL) -->
+    <div id="horizon-list" class="main-container p-6 sm:p-8 rounded-3xl shadow-2xl max-w-xl w-full mt-10 text-left flex flex-col gap-4">
+        <div class="flex justify-between items-center border-b border-white/10 pb-4">
+            <div>
+                <h2 class="text-xl font-bold gemini-gradient-text">🏆 Horizon List</h2>
+                <p class="text-[11px] text-slate-400">Danh sách các Level khó nhất được xác thực.</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs">Top 150</span>
+        </div>
+
+        <!-- Danh sách mẫu các level trong bảng xếp hạng -->
+        <div class="flex flex-col gap-2.5 max-h-[350px] overflow-y-auto pr-1">
+            <!-- Top 1 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                <div class="flex items-center gap-3">
+                    <span class="font-extrabold text-amber-400 text-sm w-6">#1</span>
+                    <div>
+                        <div class="font-bold text-xs text-white">Bloodbath Remake</div>
+                        <div class="text-[10px] text-slate-400">Creator: Seiha & Team</div>
+                    </div>
                 </div>
+                <span class="text-xs font-semibold text-cyan-300 bg-cyan-500/10 px-2.5 py-1 rounded-lg">100 pts</span>
             </div>
 
-            <!-- Nút bấm hiển thị đẹp đẽ ở dưới -->
-            <div class="flex gap-4 justify-center items-center pt-2">
-                <button onclick="alert('Đang vào game!')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/25 hover:opacity-90 transition cursor-pointer">
-                    Vào Game Ngay
-                </button>
-                <button onclick="alert('Đang cập nhật bảng xếp hạng!')" class="px-6 py-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-semibold text-xs hover:bg-white/10 transition cursor-pointer">
-                    Bảng Xếp Hạng
-                </button>
+            <!-- Top 2 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                <div class="flex items-center gap-3">
+                    <span class="font-extrabold text-slate-300 text-sm w-6">#2</span>
+                    <div>
+                        <div class="font-bold text-xs text-white">Dash Horizon Extreme</div>
+                        <div class="text-[10px] text-slate-400">Creator: DogMaireo</div>
+                    </div>
+                </div>
+                <span class="text-xs font-semibold text-cyan-300 bg-cyan-500/10 px-2.5 py-1 rounded-lg">95 pts</span>
             </div>
 
+            <!-- Top 3 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                <div class="flex items-center gap-3">
+                    <span class="font-extrabold text-amber-600 text-sm w-6">#3</span>
+                    <div>
+                        <div class="font-bold text-xs text-white">Project iSpy</div>
+                        <div class="text-[10px] text-slate-400">Creator: Community</div>
+                    </div>
+                </div>
+                <span class="text-xs font-semibold text-cyan-300 bg-cyan-500/10 px-2.5 py-1 rounded-lg">90 pts</span>
+            </div>
+            
+            <!-- Tiểu thư có thể copy thêm các dòng tiếp theo ở đây sau nhé -->
+        </div>
+
+        <div class="text-center pt-2">
+            <a href="#" class="text-[11px] text-cyan-400 hover:underline">↑ Quay lại đầu trang</a>
         </div>
     </div>
 
