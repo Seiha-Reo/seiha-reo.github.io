@@ -53,14 +53,12 @@
 
     <div class="overlay"></div>
 
-    <!-- KHUNG CHÍNH (Giao diện giữa màn hình) -->
+    <!-- KHUNG CHÍNH -->
     <div class="main-container p-6 sm:p-8 rounded-3xl shadow-2xl max-w-xl w-full text-center flex flex-col gap-5 my-auto">
-        
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-medium mx-auto">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
             Dash Horizon • Hub Trực Tuyến
         </div>
-        
         <div>
             <h1 class="text-3xl sm:text-4xl font-extrabold gemini-gradient-text tracking-wide mb-2">Dash Horizon</h1>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed px-2">
@@ -68,7 +66,6 @@
             </p>
         </div>
 
-        <!-- Khung ảnh minh họa elaina.jpg.jpeg -->
         <div class="w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg relative group">
             <img src="elaina.jpg.jpeg" alt="Dash Horizon Artwork" class="w-full h-auto object-cover max-h-[260px]">
             <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-xs text-cyan-300 flex items-center gap-2">
@@ -76,7 +73,6 @@
             </div>
         </div>
 
-        <!-- Các nút bấm điều hướng -->
         <div class="flex flex-wrap gap-3 justify-center items-center pt-1">
             <a href="#submit-level" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-xs shadow-lg shadow-cyan-500/25 hover:opacity-90 transition text-center">
                 📩 Gửi Level Rate
@@ -85,21 +81,17 @@
                 🏆 Horizon List (Top 150)
             </a>
         </div>
-
     </div>
 
-    <!-- KHUNG 1: FORM GỬI LEVEL ĐỂ RATE (GỬI THẲNG VỀ GMAIL) -->
+    <!-- FORM GỬI LEVEL -->
     <div id="submit-level" class="main-container p-6 sm:p-8 rounded-3xl shadow-2xl max-w-xl w-full text-left flex flex-col gap-4">
         <div class="border-b border-white/10 pb-3">
             <h2 class="text-xl font-bold gemini-gradient-text">📩 Gửi Level Để Rate</h2>
-            <p class="text-[11px] text-slate-400">Điền thông tin level để gửi thẳng về hộp thư của Seiha-Chan duyệt.</p>
+            <p class="text-[11px] text-slate-400">Điền thông tin level để gửi thẳng về Gmail của Seiha-Chan duyệt.</p>
         </div>
 
-        <!-- Đã kết nối action với FormSubmit về Gmail của tiểu thư -->
         <form action="https://formsubmit.co/rieole7926@gmail.com" method="POST" class="flex flex-col gap-3">
-            <!-- Tắt mã Captcha xác nhận rườm rà -->
             <input type="hidden" name="_captcha" value="false">
-            <!-- Tiêu đề email nhận được sẽ rõ ràng hơn -->
             <input type="hidden" name="_subject" value="[Dash Horizon] Có Creator vừa gửi Level mới!">
             
             <div>
@@ -116,4 +108,84 @@
             </div>
             <div>
                 <label class="text-xs text-slate-300 font-medium block mb-1">Ghi chú thêm (Tùy chọn):</label>
-                <textarea
+                <textarea name="Notes" placeholder="Độ khó dự kiến, nhịp nhạc, v.v..." rows="2" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400"></textarea>
+            </div>
+            <button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-xs shadow-md hover:opacity-90 transition mt-1 cursor-pointer">
+                Gửi Level Ngay 🚀
+            </button>
+        </form>
+    </div>
+
+    <!-- HORIZON LIST (ĐỦ 150 DÒNG CỐ ĐỊNH CHẮC CHẮN HIỆN) -->
+    <div id="horizon-list" class="main-container p-6 sm:p-8 rounded-3xl shadow-2xl max-w-xl w-full text-left flex flex-col gap-4">
+        <div class="flex justify-between items-center border-b border-white/10 pb-4">
+            <div>
+                <h2 class="text-xl font-bold gemini-gradient-text">🏆 Horizon List</h2>
+                <p class="text-[11px] text-slate-400">Bảng xếp hạng 150 Level khó nhất dự án.</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold">Top 1-150</span>
+        </div>
+
+        <div class="flex flex-col gap-2 max-h-[450px] overflow-y-auto pr-1">
+            
+            <!-- TOP 1 đến TOP 3 -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs text-amber-400 font-extrabold w-8">#1</span>
+                    <div>
+                        <div class="font-semibold text-xs text-slate-200">...</div>
+                        <div class="text-[10px] text-slate-500">by ?</div>
+                    </div>
+                </div>
+                <span class="text-[10px] font-medium text-slate-400 bg-white/5 px-2.5 py-1 rounded-lg">Pending</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs text-slate-300 font-extrabold w-8">#2</span>
+                    <div>
+                        <div class="font-semibold text-xs text-slate-200">...</div>
+                        <div class="text-[10px] text-slate-500">by ?</div>
+                    </div>
+                </div>
+                <span class="text-[10px] font-medium text-slate-400 bg-white/5 px-2.5 py-1 rounded-lg">Pending</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs text-amber-600 font-extrabold w-8">#3</span>
+                    <div>
+                        <div class="font-semibold text-xs text-slate-200">...</div>
+                        <div class="text-[10px] text-slate-500">by ?</div>
+                    </div>
+                </div>
+                <span class="text-[10px] font-medium text-slate-400 bg-white/5 px-2.5 py-1 rounded-lg">Pending</span>
+            </div>
+
+            <!-- TOP 4 đến TOP 150 -->
+            <script>
+                // Tạo nhanh danh sách tĩnh từ #4 đến #150 không qua hàm render phức tạp
+                let rows = "";
+                for(let i = 4; i <= 150; i++) {
+                    rows += `
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs text-slate-400 w-8">#${i}</span>
+                            <div>
+                                <div class="font-semibold text-xs text-slate-200">...</div>
+                                <div class="text-[10px] text-slate-500">by ?</div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-medium text-slate-400 bg-white/5 px-2.5 py-1 rounded-lg">Pending</span>
+                    </div>`;
+                }
+                document.write(rows);
+            </script>
+
+        </div>
+
+        <div class="text-center pt-2 border-t border-white/10">
+            <a href="#" class="text-[11px] text-cyan-400 hover:underline">↑ Quay lại đầu trang</a>
+        </div>
+    </div>
+
+</body>
+</html>
